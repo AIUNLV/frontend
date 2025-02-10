@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { socials } from "../data/links";
 import { texts } from "../data/texts";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -9,19 +10,21 @@ const Navbar = () => {
       data-aos="fade-down"
       data-aos-duration="700"
     >
-      <a
+      <Link
         className="flex items-center no-underline hover:scale-105 transform transition-transform duration-150"
         href="/"
       >
-        <img
+        <Image
           className="md:w-16 md:h-16 h-12 w-12 rounded-full bg-secondary"
           src="/AIDataScience_Image.webp"
+          height={64}
+          width={64}
           alt="AI & Data Science Club Logo"
         />
         <span className="ml-2 text-lg font-bold md:inline hidden">
           UNLV AI & Data Science Club
         </span>
-      </a>
+      </Link>
       <div className="flex flex-row items-center justify-center gap-2">
         <ul className="items-center gap-6 mr-4 md:flex hidden">
           {socials.map((social, index) => (
@@ -41,7 +44,7 @@ const Navbar = () => {
         <Link
           className="inline-block bg-white/50 px-8 py-2 border text-sm md:text-base border-black rounded-xl transition-all duration-700 text-black
             hover:shadow-[0px_50px_100px_-20px_rgba(50,50,93,0.25),_0px_30px_60px_-30px_rgba(0,0,0,0.3),_inset_0px_-2px_6px_0px_rgba(10,37,64,0.35)]"
-          to="/gallery"
+          href="/gallery"
         >
           {texts.nav.explore_btn}
         </Link>

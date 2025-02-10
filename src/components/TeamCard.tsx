@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Member } from "../data/members";
 
 interface TeamCardProps {
@@ -13,8 +14,8 @@ const TeamCard = ({ member }: TeamCardProps) => {
       href={member.link}
       className="flex flex-col justify-evenly gap-2 items-center bg-secondary md:rounded-2xl rounded-lg md:w-44 w-32 md:h-60 h-48 duration-300 ease-in-out hover:scale-105 hover:shadow-xl p-4"
     >
-      <img
-        src={member.src}
+      <Image
+        src={member.src!}
         alt={`${member.name} Profile`}
         height={80}
         width={80}

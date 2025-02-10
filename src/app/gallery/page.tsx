@@ -1,7 +1,9 @@
+'use client'
+
 import { useState, useEffect, useRef } from "react";
-import { EventCard, ProjectCard } from "../components/GalleryCard";
-import { projects } from "../data/projects";
-import { events } from "../data/events";
+import { EventCard, ProjectCard } from "~/components/GalleryCard";
+import { projects } from "~/data/projects";
+import { events } from "~/data/events";
 
 const Gallery: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("Events");

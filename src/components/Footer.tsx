@@ -1,20 +1,23 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { links, socials } from "../data/links";
 import { texts } from "../data/texts";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer className="flex md:flex-row flex-col items-center justify-center md:gap-20 gap-4 w-full mx-auto p-4 bg-secondary md:h-[15vh]">
-      <a
+      <Link
         className="flex items-center no-underline hover:scale-110 transform transition-transform duration-150"
         href="/"
       >
-        <img
+        <Image
           className="w-20 h-20 rounded-full"
           src="/AIDataScience_Image.jpg"
+          width={80}
+          height={80}
           alt="AI & Data Science Club Logo"
         />
-      </a>
+      </Link>
       <div className="flex gap-4">
         <div className="md:text-left text-center">
           <h3 className="text-primary font-light text-lg px-2">Links</h3>
@@ -23,7 +26,7 @@ const Footer = () => {
               <li key={index} className="text-sm">
                 <Link
                   className="group inline-block transition duration-300 px-2 py-1"
-                  to={link.href}
+                  href={link.href}
                 >
                   {link.name}
                   <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1px] bg-primary" />

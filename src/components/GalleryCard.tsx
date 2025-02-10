@@ -1,5 +1,6 @@
 import { Project } from "../data/projects";
 import { Event, formatTime, formatDate } from "../data/events";
+import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
@@ -39,8 +40,8 @@ export const EventCard = ({ event }: EventCardProps) => {
     transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-xl"
     >
       <div className="max-h-64 overflow-hidden">
-        {event.src && (
-          <img
+        {event.src && event.alt && (
+          <Image  
             src={event.src}
             alt={event.alt}
             className="w-full h-auto object-cover aspect-video"

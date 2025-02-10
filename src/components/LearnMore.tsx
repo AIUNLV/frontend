@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import { texts } from "../data/texts";
+import Image from "next/image";
 
 const LearnMore = () => {
   return (
@@ -39,23 +40,28 @@ const LearnMore = () => {
               </p>
             </div>
           </div>
-          <Link
+          <div
             data-aos="flip-down"
             data-aos-delay="1000"
             data-aos-duration="750"
-            className="flex items-center gap-3 rounded-lg p-4 text-white w-36 transition-all duration-500
-        bg-gradient-to-tl from-primary via-red-600 to-primary bg-[length:200%_200%] bg-[0%_0%] hover:bg-[100%_100%]"
-            to="/gallery"
           >
-            {texts.learnMore.btn}{" "}
-            <FaArrowRight className="h-4 w-4 text-white" />
-          </Link>
+            <Link
+              className="flex items-center gap-3 rounded-lg p-4 text-white w-36
+      bg-gradient-to-tl from-primary via-red-600 to-primary 
+      bg-[length:200%_200%] bg-[0%_0%] 
+      hover:bg-[100%_100%] transition-all duration-500"
+              href="/gallery"
+            >
+              {texts.learnMore.btn}
+              <FaArrowRight className="h-4 w-4 text-white" />
+            </Link>
+          </div>
         </div>
         <div
           data-aos="fade-up-left"
           className="flex items-center justify-start max-w-[500px] bg-gradient-to-tl from-[#bebcb2] to-[#d5d5ce] rounded-full md:mr-16"
         >
-          <img
+          <Image
             className="w-auto h-full rounded-full p-6"
             src="/images/image-3.webp"
             alt="AI & Data Science Club Logo"
